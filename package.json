@@ -14,8 +14,28 @@
   "contributes": {
     "commands": [
       {
-        "command": "vscode-php-new-file.helloWorld",
-        "title": "Hello World"
+        "command": "vscode-php-new-file.create-php-file",
+        "title": "Create PHP file"
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "submenu": "vscode-php-new-file.new-file",
+          "when": "explorerResourceIsFolder",
+          "group": "1_php_new_file"
+        }
+      ],
+      "vscode-php-new-file.new-file": [
+        {
+          "command": "vscode-php-new-file.create-php-file"
+        }
+      ]
+    },
+    "submenus": [
+      {
+        "id": "vscode-php-new-file.new-file",
+        "label": "New PHP File"
       }
     ]
   },
